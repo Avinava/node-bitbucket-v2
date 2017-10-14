@@ -209,7 +209,7 @@ module.exports = function Request(_options) {
      * Get a JSON response and transform to JSON
      */
     decodeResponse(response) {
-      if ($options.format === 'json') {
+      if ($options.format === 'json' && typeof response == 'string') {
         return JSON.parse(response);
       }
 
